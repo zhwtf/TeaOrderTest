@@ -55,9 +55,13 @@ public class MenuActivityScreenTest {
 
     @Test
     public void clickGridViewItem_OpensOrderActivity() {
+        // Uses {@link Espresso#onData(org.hamcrest.Matcher)} to get a reference to a specif
+        // gridview item and clicks it.
         onData(anything()).inAdapterView(withId(R.id.tea_grid_view)).atPosition(1).perform(click());
 
+        // Checks that the OrderActivity opens with the correct tea name displayed
         onView(withId(R.id.tea_name_text_view)).check(matches(withText(TEA_NAME)));
+
     }
 
 }
