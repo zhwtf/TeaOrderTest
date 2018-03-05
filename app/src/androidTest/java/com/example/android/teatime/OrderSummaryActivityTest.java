@@ -43,6 +43,7 @@ public class OrderSummaryActivityTest {
 
     }
 
+
     @Test
     public void clickSendingEmailButton_SendsEmail() {
         onView(withId(R.id.send_email_button)).perform(click());
