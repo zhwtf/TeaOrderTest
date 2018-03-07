@@ -21,12 +21,14 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.VisibleForTesting;
+import android.support.test.espresso.IdlingResource;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.example.android.teatime.IdlingResource.SimpleIdlingResource;
 import com.example.android.teatime.model.Tea;
 
 import java.util.ArrayList;
@@ -123,7 +125,7 @@ public class MenuActivity extends AppCompatActivity implements ImageDownloader.D
     @NonNull
     public IdlingResource getIdlingResource() {
         if (mIdlingResource == null) {
-            mIdlingResource = new SimpleIdingResource();
+            mIdlingResource = new SimpleIdlingResource();
         }
         return mIdlingResource;
     }
